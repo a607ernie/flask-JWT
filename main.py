@@ -68,7 +68,6 @@ def login():
     return jsonify(ret), 201
 
 
-
 # Endpoint for revoking the current users access token
 @app.route('/auth/access_revoke', methods=['DELETE'])
 @jwt_required
@@ -84,7 +83,6 @@ def logout():
 @jwt_required
 def protected():
     username = get_jwt_identity()
-    print("this is a protected api")
     return jsonify(logged_in_as=username), 200
 
 
