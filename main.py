@@ -12,7 +12,8 @@ app.secret_key = 'ChangeMe!'
 
 # Setup the flask-jwt-extended extension. See:
 ACCESS_EXPIRES = timedelta(minutes=1)
-app.config['JWT_TOKEN_LOCATION'] = ['query_string']
+#app.config['JWT_TOKEN_LOCATION'] = ['query_string']
+app.config['JWT_TOKEN_LOCATION'] = ['json']
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = ACCESS_EXPIRES
 app.config['JWT_BLACKLIST_ENABLED'] = True
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
@@ -79,7 +80,7 @@ def logout():
 
 
 # A blacklisted access token will not be able to access this any more
-@app.route('/protected', methods=['GET'])
+@app.route('/protected', methods=['GET','POST'])
 @jwt_required
 def protected():
     username = get_jwt_identity()
