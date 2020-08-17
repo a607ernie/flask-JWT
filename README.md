@@ -9,7 +9,7 @@
   - [User.json](#userjson)
   - [新增和改動的部分](#新增和改動的部分)
 
-此repo是參考[redis_blacklist.py](https://github.com/vimalloc/flask-jwt-extended/blob/master/examples/redis_blacklist.py)，依個人需求改寫。
+> 參考[redis_blacklist.py](https://github.com/vimalloc/flask-jwt-extended/blob/master/examples/redis_blacklist.py)，依需求改寫。
 
 需求
 ---
